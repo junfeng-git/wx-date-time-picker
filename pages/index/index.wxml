@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 小程序弹窗组件 -->
+  <date-time-picker show="{{show}}" bind:onSelectDate="handleSelectDateTime"></date-time-picker>
+  <date-time-picker-plus show="{{showPlus}}" bind:onSelectDate="handleSelectDateTime"></date-time-picker-plus>
+  <view style="margin: 200rpx auto;text-align: center;">
+    <view class="label" style="margin-bottom:60rpx;">
+      选择的时间：{{dateTime}}
+    </view>
+    <button bindtap="handleOpenPicker" data-type="noplus"  type="primary">选择时间</button>
+  </view>
+  <view style="margin: 200rpx auto;text-align: center;">
+    <view class="label" style="margin-bottom:60rpx;">
+      选择的时间：{{dateTimePlus}}
+    </view>
+    <button bindtap="handleOpenPicker" data-type="plus" type="primary">选择时间 Plus</button>
+  </view>
+</view>

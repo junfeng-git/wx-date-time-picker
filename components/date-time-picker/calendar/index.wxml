@@ -1,0 +1,21 @@
+<wxs src="./calendar.wxs" module="calculate" />
+<view class="calendar">
+  <!-- 日历头部 -->
+  <view class="flex-around calendar-week">
+    <view class="week-item" wx:for="{{calendarHeadDate}}" wx:key="*this">
+      {{calendarHeadDate[(index-firstDayOfWeek+7)%7]}}
+    </view>
+  </view>
+  <!-- 日历主体 -->
+  <swiper class="calendar-swiper" style="height:{{swiperHeight}}rpx" bindchange="swiperChange" circular current="{{swiperCurrent}}" duration="{{swiperDuration}}" vertical="{{vertical}}">
+    <swiper-item wx:for="{{[dateList0, dateList1, dateList2]}}" wx:for-index="listIndex" wx:for-item="listItem" wx:key="listIndex">
+      <view class="flex-around flex-wrap calendar-main" style="height:{{listItem.length/7*82}}rpx">
+        <view wx:for="{{listItem}}" wx:key="dateList" class="day">
+          <view class="bg {{calculate.spot(item,selectDay,spotMap)}} {{calculate.hasNow(item,nowDay)}} {{calculate.hasNowMonth(item,selectDay)}} {{calculate.hasSelect(item,selectDay,oldCurrent,listIndex)}} {{calculate.hasDisable(item,disabledDateList)}} {{calculate.hasMonthFirstDay(item)}}" catchtap="selectChange" data-day="{{item.day}}" data-year="{{item.year}}" data-month="{{item.month}}">
+            {{calculate.monthFirstDayFormat(item)}}
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,43 @@
+<view class="date-time-picker-box">
+  <van-popup show="{{ show }}" zIndex="9999" round position="bottom" custom-style="border-radius:16px 16px 0 0;min-height:355px;max-height:400px;" bind:close="handleCancel">
+    <view class="date-time-picker-title">
+      <view class="date-time-picker-nav">
+        <view bindtap="handleChangeTag" data-index="0" class="tag date-tag {{currentIndex == 0 ? 'active' : ''}}">
+          {{year}}年{{month}}月{{day}}日
+        </view>
+        <view bindtap="handleChangeTag" data-index="1" class="tag time-tag {{currentIndex == 1 ? 'active' : ''}}">
+          {{hour}}:{{minute}}
+        </view>
+        <view class="date-time-line" style="left:{{left}}px;width: {{width}}px;"></view>
+      </view>
+      <button bindtap="handleConfirm" class="date-picker-oper-btn">确定</button>
+    </view>
+    <view class="date-time-picker-content">
+      <!-- 日历主体 -->
+      <swiper current="{{currentIndex}}" style="height:100%;">
+        <swiper-item catchtouchmove="catchtouchmove">
+          <view class="swiper-item ">
+            <!-- 日历组件 -->
+            <calendar bindselectDay="selectDay" bindgetDateList="getDateList" vertical="{{vertical}}"></calendar>
+          </view>
+        </swiper-item>
+        <swiper-item catchtouchmove="catchtouchmove">
+          <view class="swiper-item ">
+            <div class="date-time-item">
+              <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center;" value="{{value}}" bindpickstart="bindpickstart" bindpickend="bindpickend" bindchange="bindChange">
+                <picker-view-column>
+                  <view wx:for="{{hours}}" wx:key="*this" style="line-height: 50px">{{item}}时</view>
+                </picker-view-column>
+                <picker-view-column>
+                  <view wx:for="{{minutes}}" wx:key="*this" style="line-height: 50px">
+                    {{item}}分
+                  </view>
+                </picker-view-column>
+              </picker-view>
+            </div>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </van-popup>
+</view>

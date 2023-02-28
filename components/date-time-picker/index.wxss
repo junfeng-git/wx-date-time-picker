@@ -1,0 +1,83 @@
+.date-time-picker-box .date-time-picker-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 48rpx;
+  height: 112rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #E5E3E3;
+  max-height: 400px;
+  /* overflow: hidden; */
+}
+
+.date-time-picker-box .date-time-picker-title .title-txt {
+  font-size: 17px;
+  font-weight: 500;
+  color: #1F1E1E;
+}
+
+.date-time-picker-box .date-time-picker-title .date-picker-oper-btn {
+  width: 104rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: var(--themeTxtColor);
+  background-color: var(--themeColor);
+}
+
+.date-time-picker-box .date-time-picker-title .cancel-btn {
+  color: #5C5959;
+  background-color: #fff;
+  text-align: left;
+}
+
+.date-time-picker-box .date-time-picker-title .date-time-picker-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #8F8D8D;
+  height: 100%;
+}
+
+.date-time-picker-box .date-time-picker-nav .date-tag {
+  margin-right: 32rpx;
+}
+
+.date-time-picker-box .date-time-picker-nav .tag {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-time-picker-box .date-time-picker-nav .tag.active {
+  color: #1F1E1E;
+}
+
+.date-time-picker-box .date-time-picker-nav .date-time-line {
+  position: absolute;
+  bottom: 0;
+  width: 40rpx;
+  height: 4rpx;
+  background-color: #5C5959;
+  transition: all 0.3s linear;
+}
+
+.date-picker-btn-box {
+  display: flex;
+  font-weight: 600;
+  margin-top: 40rpx;
+  color: var(--themeColor);
+  justify-content: space-around;
+}
+
+.date-time-picker-content {
+  height: 600rpx;
+  box-sizing: border-box;
+}
