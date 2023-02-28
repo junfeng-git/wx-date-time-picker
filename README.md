@@ -7,11 +7,40 @@
 软件架构说明
 
 
-#### 安装教程
+#### 使用教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  在 wxml 中
+```
+<date-time-picker show="{{show}}" bind:onSelectDate="handleSelectDateTime"></date-time-picker>
+```
+2.  在 json 中
+```
+{
+  "component": true,
+  "usingComponents": {
+    "date-time-picker": "/components/date-time-picker/index"
+  }
+}
+```
+3.  在 js 中
+```
+Page({
+  data: {
+    showPlus: false
+  },
+  onLoad() {},
+  handleOpenPicker() {
+    this.setData({show: true })
+  },
+  // 选择时间
+  handleSelectDateTime(e) {
+    console.log(e.detail)
+    this.setData({
+       dateTime: e.detail
+    })
+  }
+})
+```
 
 #### 使用说明
 
