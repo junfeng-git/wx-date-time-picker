@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    show: false,
     showPlus: false,
     dateTime: '',
     dateTimePlus: '',
