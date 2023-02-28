@@ -26,7 +26,7 @@
 ```
 Page({
   data: {
-    showPlus: false
+    show: false
   },
   onLoad() {},
   handleOpenPicker() {
